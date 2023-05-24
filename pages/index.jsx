@@ -39,8 +39,23 @@ const DUMMY_MEETUPS = [
   },
 ];
 
-const HomePage = () => {
-  return <MeetupList meetups={DUMMY_MEETUPS} />;
+const HomePage = (props) => {
+  return <MeetupList meetups={props.meetups} />;
+};
+
+// This is a reserve function name and it's a async function. Meaning It waits for the promise to resolve before
+// rendering the component
+export const getStaticProps = async () => {
+  // We can run server side code from inside this function. Bc this function will never end up in the client side
+  // We can access file system here or connecting to databases from here
+  return {
+    // This has to be named props and this is the props that we receive in the component function
+    props: {
+      meetups: DUMMY_MEETUPS,
+    },
+    // revalidate takes in a number until next js revalidate after that many seconds for that incoming request after deployment
+    revalidate: 3600,
+  };
 };
 
 export default HomePage;
