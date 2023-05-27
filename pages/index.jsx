@@ -59,7 +59,7 @@ export const getStaticProps = async () => {
       })),
     },
     // revalidate takes in a number until next js revalidate after that many seconds for that incoming request after deployment
-    revalidate: 3600,
+    revalidate: 1,
   };
 };
 

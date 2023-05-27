@@ -29,7 +29,7 @@ const NewMeetupPage = () => {
         <title>Add your own meetups</title>
         <meta description='The quick brown fox jumps over the lazy dog' />
       </Head>
-      <NewMeetupForm onAddMeetup={addMeetupHandler} />;
+      <NewMeetupForm onAddMeetup={addMeetupHandler} />
     </Fragment>
   );
 };
