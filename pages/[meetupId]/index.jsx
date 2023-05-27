@@ -13,6 +13,7 @@ const MeetupDetailsPage = ({ title, image, address, description }) => {
 
 export const getStaticPaths = async () => {
   return {
+    
     // fallback: false means we defined all the paths (all the possible meetupId) in the paths array
     // true means otherwise and will try to create a fallback page
     fallback: true,
